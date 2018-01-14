@@ -41,14 +41,14 @@ public class TrelloClient {
 
     public List<TrelloBoardDto> getTrelloBoards() {
 
-        try {
+//        try {
             TrelloBoardDto[] boardsResponse = restTemplate.getForObject(getTrelloBoardsURL(), TrelloBoardDto[].class);
             return Arrays.asList(ofNullable(boardsResponse).orElse(new TrelloBoardDto[0]));
 
-        } catch (RestClientException e) {
-            LOGGER.error(e.getMessage(), e);
-            return new ArrayList<>();
-        }
+//        } catch (RestClientException e) {
+//            LOGGER.error(e.getMessage(), e);
+//            return new ArrayList<>();
+//        }
     }
 
     private URI getTrelloBoardURL(String id) {
