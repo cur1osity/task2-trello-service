@@ -24,6 +24,11 @@ public class TrelloController {
         return trelloService.fetchTrelloBoards();
     }
 
+    @GetMapping("/{id}")
+    public TrelloBoardDto getTrelloBoard(@PathVariable String id) {
+        return trelloService.fetchTrelloBoard(id);
+    }
+
     @PostMapping
     public CreatedTrelloCard createdTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
         return trelloService.createdTrelloCardDto(trelloCardDto);

@@ -29,6 +29,10 @@ public class TrelloService {
         return trelloClient.getTrelloBoards();
     }
 
+    public TrelloBoardDto fetchTrelloBoard(String id) {
+        return trelloClient.getTrelloBoard(id);
+    }
+
     public CreatedTrelloCard createdTrelloCardDto(final TrelloCardDto trelloCardDto){
         CreatedTrelloCard newCard = trelloClient.createNewCard(trelloCardDto);
 
