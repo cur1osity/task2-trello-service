@@ -10,7 +10,4 @@ public class AdminConfig {
 
     @Value ("${admin.mail}")
     private String adminMail;
-
-    @Value("${second.mail}")
-    private String secondEmail;
 }
