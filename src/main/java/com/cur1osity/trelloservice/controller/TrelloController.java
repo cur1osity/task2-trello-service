@@ -50,7 +50,7 @@ public class TrelloController {
 
     }
 
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public MessageDto handleValidationException(MethodArgumentNotValidException ex, Locale locale) {
         BindingResult result = ex.getBindingResult();
