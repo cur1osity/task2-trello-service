@@ -18,7 +18,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.cur1osity'
-version = '0.0.1-SNAPSHOT'
+version = '1.0'
 sourceCompatibility = 1.8
 
 repositories {
@@ -27,12 +27,23 @@ repositories {
 	maven { url "https://repo.spring.io/milestone" }
 }
 
+ext {
+	springCloudVersion = 'Finchley.M5'
+}
+
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-starter-validation')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile ('org.springframework.boot:spring-boot-starter-mail:2.0.0.M7')
+	compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
 }
